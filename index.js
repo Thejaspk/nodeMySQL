@@ -33,8 +33,8 @@ app.get('/', (req, res) => res.render('index'))
 
 // route_2: Nodejs save form data in MySQL
 app.post('/users', (req, res) => {
-    const { username, email } = req.body
-    const user = { username, email }
+    const { username, email, adress } = req.body
+    const user = { username, email , adress}
 
     db.query('INSERT INTO users SET ?', user, (err, output) => {
         if (err) throw err 
