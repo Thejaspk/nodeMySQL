@@ -29,7 +29,16 @@ db.connect(err => {
 // ROUTES
 
 // route_1: [GET] home page
-app.get('/', (req, res) => res.render('index'))
+app.get('/', (req, res) => {
+    console.log("test")
+    db.query('SELECT * FROM USERS ',(err, output) => {
+        if (err) throw err 
+
+        console.log(output)
+        res.render('index',{testing: "thejas", usersList: output}) 
+     })
+ 
+})
 
 // route_2: Nodejs save form data in MySQL
 app.post('/users', (req, res) => {
