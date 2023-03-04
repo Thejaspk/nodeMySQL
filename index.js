@@ -30,14 +30,11 @@ db.connect(err => {
 
 // route_1: [GET] home page
 app.get('/', (req, res) => {
-    console.log("test")
+
     db.query('SELECT * FROM USERS ',(err, output) => {
         if (err) throw err 
-
-        console.log(output)
-        res.render('index',{testing: "thejas", usersList: output}) 
-     })
- 
+        res.render('index',{ usersList: output}) 
+     }) 
 })
 
 // route_2: Nodejs save form data in MySQL
@@ -47,9 +44,17 @@ app.post('/users', (req, res) => {
 
     db.query('INSERT INTO users SET ?', user, (err, output) => {
         if (err) throw err 
-        res.send('User saved successfully!')
+        console.log('User saved successfully!');
+        res.redirect('/');
     })
 })
-
+app.post('/users/:id/delete', (req,res) => {
+    const id = req.params.id
+    db.query('DELETE FROM USERS WHERE id=?',id,(err, output) => {
+        if(err) throw err
+        console.log("user deleted");
+    })
+    res.redirect( '/') ;
+})
 // wait for requests from PORT 3000
 app.listen(3000)

@@ -13,11 +13,11 @@
 
       <% for ( var i = 0 ; i<usersList.length ; i++ ) { %>
       <tr>
-        <td class="data"><%= usersList[i].username %> </td>
+        <td class="data"> <%=usersList[i].username %> </td>
         <td class="data"> <%= usersList[i].email %>  </td>
         <td class="data"><%= usersList[i].adress %>  </td>
       
-        <td><form action="/users/ <%=usersList[i].id%>/delete" method="post" ><button type="submit">Delete</button></form></td>
+        <td><form action="/users/<%=usersList[i].id%>/delete" method="post" ><button type="submit">Delete</button></form></td>
       </tr>
       <% } %>
 </table>
@@ -26,9 +26,6 @@
 
 
       <h2>Register a user</h2>
-
-
-
       <form action="/users" method="POST" class="registrationForm">
           <div> 
               <input type="text" name="username" placeholder="Username" required>

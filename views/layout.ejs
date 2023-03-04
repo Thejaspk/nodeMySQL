@@ -6,42 +6,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
     <title> Nodejs save form data in MySQL table</title>
+        
     <style>
 
-        input[type=text],input[type=email],textarea, select {
-          width: 90%;
-          padding: 12px 20px;
-          margin: 8px 0;
-          display: inline-block;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          box-sizing: border-box;
-        }
+    @font-face {
+      font-family: roboto;
+      src : url(../fonts/Roboto-Regular.ttf)
+    }
+
+    * {
+        font-family:  roboto;
         
-        button {
-          width: 10%;
-          background-color: #4CAF50;
-          color: white;
-          padding: 14px 20px;
-          margin: 8px 0;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-        }
-        
-        button:hover {
-          background-color: #45a049;
-        }
-        
-        div {
-          border-radius: 5px;
-          background-color: #f2f2f2;
-          padding: 20px;
-        }
-        
-        
-        </style>
-        
+    }
+
+    .table
+    {
+      border-radius: 25px;
+    }
+
+    body{
+      padding:20px;
+    }
+
+    input[type=text],input[type=email],textarea, select {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    }
+  
+  button {
+    height:35px;
+    text-align: center;
+    width: 10%;
+    background-color: #4CAF50;
+    color: white;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 20px;
+
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+
+  .registrationForm {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    width:50%;
+    padding: 20px 30px;
+  }
+
+  .registrationForm div{
+    margin: 20px 0;
+  }
+
+  h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  }
+
+  #users {
+  border-radius: 25px;
+  border-collapse: collapse;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#users .data, #users th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+
+#users button{
+  width:100px;
+  margin-left: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 20px;
+  height: 35px;
+
+}
+
+
+#users th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+
+    </style>
 </head>
 <body>
     <%- body %>
