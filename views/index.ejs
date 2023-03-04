@@ -1,29 +1,35 @@
   <main>
 
-
-
-    <table>
+    <% if (usersList.length>0) { %>
+<div class="table">
+    <table id="users">
       <tr>
         <th>Name</th>
         <th>Email</th>
-        <th>Adress</th>
+        <th>Address</th>
+        
       </tr>
+
 
       <% for ( var i = 0 ; i<usersList.length ; i++ ) { %>
       <tr>
-        <td><%= usersList[i].username %></td>
-        <td> <%= usersList[i].email %>  </td>
-        <td><%= usersList[i].adress %>  </td>
+        <td class="data"><%= usersList[i].username %> </td>
+        <td class="data"> <%= usersList[i].email %>  </td>
+        <td class="data"><%= usersList[i].adress %>  </td>
+      
+        <td><form action="/users/ <%=usersList[i].id%>/delete" method="post" ><button type="submit">Delete</button></form></td>
       </tr>
       <% } %>
 </table>
+</div>
+<% } %>
 
 
       <h2>Register a user</h2>
 
 
 
-      <form action="/users" method="POST">
+      <form action="/users" method="POST" class="registrationForm">
           <div> 
               <input type="text" name="username" placeholder="Username" required>
           </div>
@@ -33,7 +39,7 @@
           <div>
               <textarea  name="address" placeholder="Please enter your address" ></textarea>
           </div>
-          <center><button>Save</button></center>
+         <button>Save</button>
       </form>
       
   </main>
