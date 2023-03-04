@@ -4,7 +4,7 @@
 <div class="table">
     <table id="users">
       <tr>
-        <th>Name</th>
+        <th>Name</th> 
         <th>Email</th>
         <th>Address</th>
         
@@ -16,14 +16,14 @@
         <td class="data"> <%=usersList[i].username %> </td>
         <td class="data"> <%= usersList[i].email %>  </td>
         <td class="data"><%= usersList[i].adress %>  </td>
-      
+        
         <td><form action="/users/<%=usersList[i].id%>/delete" method="post" ><button type="submit">Delete</button></form></td>
       </tr>
       <% } %>
 </table>
 </div>
 <% } %>
-
+  
 
       <h2>Register a user</h2>
       <form action="/users" method="POST" class="registrationForm">
@@ -34,7 +34,7 @@
               <input type="email" name="email" placeholder="Email" required>
           </div>
           <div>
-              <textarea  name="address" placeholder="Please enter your address" ></textarea>
+              <textarea  name="adress" placeholder="Please enter your address" ></textarea>
           </div>
          <button>Save</button>
       </form>

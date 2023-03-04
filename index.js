@@ -27,7 +27,6 @@ db.connect(err => {
 })
 
 // ROUTES
-
 // route_1: [GET] home page
 app.get('/', (req, res) => {
 
@@ -47,7 +46,7 @@ app.post('/users', (req, res) => {
         console.log('User saved successfully!');
         res.redirect('/');
     })
-})
+}) 
 app.post('/users/:id/delete', (req,res) => {
     const id = req.params.id
     db.query('DELETE FROM USERS WHERE id=?',id,(err, output) => {
